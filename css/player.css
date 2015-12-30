@@ -1,0 +1,32 @@
+/*
+    darkgray: rgb(30, 30 30);
+    lightgrey: rgb(70, 70, 70);
+    lightblue: rgb(50, 170, 220);
+*/
+
+#player {
+    background-color: rgb(30, 30, 30);
+    display: inline-block;
+}
+img {
+    background-color: rgb(70, 70, 70);
+}
+#video-container {
+    width: 640px;
+    height: 360px;
+}
+/* video is sized to its parent container */
+video {
+    height: 100%;
+    width: 100%;
+}
+#pbar-container {
+    background-color: rgb(70, 70, 70);
+    margin-top: 2px;
+    padding-bottom: 2px;
+}
+#pbar {
+    height: 5px;
+    width: 50%;
+    background-color: rgb(50, 170, 220);
+}
