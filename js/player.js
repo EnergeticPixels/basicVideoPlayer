@@ -5,11 +5,13 @@ window.addEventListener('load', function() {
     playButton = document.getElementById('playBtn');
     pbarContainer = document.getElementById('pbar-container');
     pbar = document.getElementById('pbar');
+    timeField = document.getElementById('time-field');
 
     video.load();
     video.addEventListener('canplay', function() {
         playButton.addEventListener('click', playOrPause, false);
         pbarContainer.addEventListener('click', skip, false);
+        updatePlayer();
     }, false);
 
 }, false);
@@ -29,6 +31,7 @@ function playOrPause() {
 function updatePlayer() {
     var percentage = (video.currentTime/video.duration)*100;
     pbar.style.width = percentage + "%";
+    timeField.innerHTML = getFormattedTime();
     if(video.ended) {
         window.clearInterval(update);
         playButton.src = './images/replay.png';
@@ -43,4 +46,21 @@ function skip(ev) {
     // alert(barwidth);
     video.currentTime = (mouseX/barwidth) * video.duration;
     updatePlayer();
-}
+};
+
+function getFormattedTime() {
+
+    var seconds = Math.round(video.currentTime); // rounds up to nearest second
+    var minutes = Math.floor(seconds/60);  // rounds to nearest lower integer
+    if (minutes > 0) seconds -= minutes*60;
+    if (seconds.toString().length === 1) seconds = "0" + seconds;
+
+    var totalSeconds = Math.round(video.duration);
+    var totalMinutes = Math.floor(totalSeconds/60);
+    if (totalMinutes > 0) totalSeconds -= totalMinutes*60;
+    if (totalSeconds.toString().length === 1) totalSeconds = "0" + totalSeconds;
+
+    return minutes + ":" + seconds + " / " + totalMinutes + ":" + totalSeconds;
+
+
+};
