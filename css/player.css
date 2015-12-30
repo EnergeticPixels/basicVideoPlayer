@@ -41,7 +41,7 @@ video {
 }
 #pbar {
     height: 5px;
-    width: 50%;
+    width: 0%;
     background-color: rgb(50, 170, 220);
 }
 #buttons-container {
