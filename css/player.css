@@ -7,10 +7,24 @@
 #player {
     background-color: rgb(30, 30, 30);
     display: inline-block;
+    /* new css3 property to keep objects on control from being selected with a mouse drag */
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 img {
     background-color: rgb(70, 70, 70);
 }
+img:hover {
+    background-color: rgb(50, 150, 220);
+}
+/* this will add 'indication' that item is selectable/clickable */
+img, #pbar-container, #sbar-container {
+    cursor: pointer;
+}
+
+/* everything below is a container */
 #video-container {
     width: 640px;
     height: 360px;
@@ -29,4 +43,39 @@ video {
     height: 5px;
     width: 50%;
     background-color: rgb(50, 170, 220);
+}
+#buttons-container {
+    height: 50px;
+}
+
+/* targeting all the DIRECT children of btn container */
+#buttons-container > * {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin: 0 10px;
+    /*outline: 1px solid red;*/
+}
+#time-field {
+    color: rgb(70, 150, 220);
+    line-height: 50px; /* makes sure text is vertically centered due parent container is 50px high*/
+    cursor: default;
+
+}
+#soundBtn {
+    margin-right: 0;
+}
+#sbar-container {
+    margin-left: 0;
+    width: 100px;
+    height: 5px;
+    background-color: rgb(70, 70, 70);
+}
+#sbar {
+    height: 100%;
+    width: 50%;
+    background-color: rgb(50, 170, 220);
+}
+#fullscreenBtn {
+    float: right;
 }
