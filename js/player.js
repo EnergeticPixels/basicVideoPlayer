@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
     soundButton = document.getElementById('soundBtn');
     sbarContainer = document.getElementById('sbar-container');
     sbar = document.getElementById('sbar');
+    fullScrnButton = document.getElementById('fullscreenBtn');
 
     video.load();
     video.addEventListener('canplay', function() {
@@ -17,6 +18,7 @@ window.addEventListener('load', function() {
         updatePlayer();
         soundButton.addEventListener('click', muteOrUnmute, false);
         sbarContainer.addEventListener('click', changeVolume, false);
+        fullScrnButton.addEventListener('click', fullscreen, false);
     }, false);
 
 }, false);
@@ -92,4 +94,17 @@ function changeVolume(ev) {
     video.muted = false;
     soundButton.src = './images/sound.png';
     sbar.style.display = 'block';
-}
+};
+
+function fullscreen() {
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitRequestFullScreen) {
+        video.webkitRequestFullScreen();
+    } else if (video.mozRequestFullScreen) {
+        // alert('i am in firefox');
+        video.mozRequestFullScreen();
+    } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+    }
+};
