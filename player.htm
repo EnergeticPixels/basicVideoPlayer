@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>video player</title>
+        <meta name="description" content="video player for html5">
+        <meta name="author" content="anthony jackman">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- html5 standard controls will differ from browser to browser. To combat this, skin your own -->
+        <!-- 'poster' attr is used to display a image before the video plays-->
+        <!-- Text within the video tag is fallback if the browser or platform can not play any of the video file options. -->
+        <video poster='./images/thumbnail.png'>
+            <source src='./sample.webm'>
+            <source src='./sample.ogg'>
+            <source src='./sample.mp4'>
+            It seems that your browser does not support the HTML5 video tag. Please update your browser.
+        </video>
+
+    <script src="js/scripts.js"></script>
+    </body>
+</html>
