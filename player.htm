@@ -13,15 +13,36 @@
         <![endif]-->
     </head>
     <body>
-        <!-- html5 standard controls will differ from browser to browser. To combat this, skin your own -->
-        <!-- 'poster' attr is used to display a image before the video plays-->
-        <!-- Text within the video tag is fallback if the browser or platform can not play any of the video file options. -->
-        <video poster='./images/thumbnail.png'>
-            <source src='./sample.webm'>
-            <source src='./sample.ogg'>
-            <source src='./sample.mp4'>
-            It seems that your browser does not support the HTML5 video tag. Please update your browser.
-        </video>
+        <div id='player'>
+
+            <div id='video-container'>
+                <video poster='./images/thumbnail.png'>
+                    <source src='./sample.webm'>
+                    <source src='./sample.ogg'>
+                    <source src='./sample.mp4'>
+                    It seems that your browser does not support the HTML5 video tag. Please update your browser.
+                </video>
+            </div>
+
+            <div id='pbar-container'>
+                <div id='pbar'></div>
+            </div>
+
+            <div id='buttons-container'>
+                <!-- add images from left to right -->
+                <img id='playBtn' src='./images/play.png' />
+                <div id='time-field'>
+                    0:00 / 0:00
+                </div>
+                <img id='soundBtn' src='./images/sound.png' />
+                <div id='sbar-container'>
+                    <div id='sbar'></div>
+                </div>
+                <img id='fullscreenBtn' src='./images/fullscreen.png' />
+            </div>
+
+        </div>
+
 
     <script src="js/scripts.js"></script>
     </body>
